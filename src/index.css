@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary-green: #263F12;
+  --color-secondary-green: #5D852D;
+  --color-ivory: #FAF9F0;
+  --color-muted-green: #97A38A;
+  --color-primary-text: #26351F;
+  --color-white: #FFFFFF;
+  --color-border: #DDE2D4;
+  --color-secondary-text: #6B7165;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    background-color: #FAF9F0;
+    color: #26351F;
+    font-family: 'Jost', Inter, system-ui, sans-serif;
+    overflow-x: clip;
+  }
+
+  body {
+    background-color: #FAF9F0;
+    color: #26351F;
+    overflow-x: clip;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, .font-editorial {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+  }
+
+  /* Accessible focus ring matching brand dark green */
+  :focus-visible {
+    outline: 2px solid #263F12;
+    outline-offset: 2px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Custom Swiper overrides matching luxury editorial aesthetic */
+.sfs-swiper .swiper-pagination {
+  bottom: 12px !important;
+}
+
+.sfs-swiper .swiper-pagination-bullet {
+  width: 22px;
+  height: 2px;
+  border-radius: 0;
+  background: rgba(38, 63, 18, 0.28);
+  opacity: 1;
+  transition: all 0.25s ease;
+}
+
+.sfs-swiper .swiper-pagination-bullet-active {
+  width: 38px;
+  background: #263F12;
+}
+
+/* Hide scrollbar for horizontal pill rails while preserving scroll */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
