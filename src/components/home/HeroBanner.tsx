@@ -51,9 +51,15 @@ export function HeroBanner() {
                         <p className="font-sans text-[11px] sm:text-xs font-medium uppercase tracking-[0.22em] text-brand-secondary">
                           {slide.collectionName}
                         </p>
-                        <h1 className="mt-2.5 font-serif text-[34px] sm:text-[48px] lg:text-[62px] font-medium leading-[1.06] tracking-[-0.015em] text-ink">
-                          {slide.headline}
-                        </h1>
+                        {index === 0 ? (
+                          <h1 className="mt-2.5 font-serif text-[34px] sm:text-[48px] lg:text-[62px] font-medium leading-[1.06] tracking-[-0.015em] text-ink">
+                            {slide.headline}
+                          </h1>
+                        ) : (
+                          <h2 className="mt-2.5 font-serif text-[34px] sm:text-[48px] lg:text-[62px] font-medium leading-[1.06] tracking-[-0.015em] text-ink">
+                            {slide.headline}
+                          </h2>
+                        )}
                         <p className="mt-3.5 font-sans text-sm sm:text-base leading-relaxed text-ink-secondary max-w-md">
                           {slide.description}
                         </p>

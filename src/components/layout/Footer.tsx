@@ -15,8 +15,9 @@ const SHOP_LINKS = [
 const SUPPORT_LINKS = [
   { label: 'About Us', to: '/about' },
   { label: 'Contact Us', to: '/contact' },
+  { label: 'FAQ', to: '/faq' },
   { label: 'Track Order', to: '/track-order' },
-  { label: 'Customer Support', to: '/contact' },
+  { label: 'My Orders', to: '/orders' },
 ];
 
 const POLICY_LINKS = [

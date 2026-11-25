@@ -2,6 +2,7 @@ import { useRef, useState, type FormEvent } from 'react';
 import { Link, useNavigate, useSearchParams } from 'react-router-dom';
 import { Info, ShieldCheck, Truck } from 'lucide-react';
 import { useCartStore } from '@/store/useCartStore';
+import { useCustomerStore } from '@/store/useCustomerStore';
 import type { OrderSummary } from '@/types';
 import { Breadcrumb } from '@/components/ui/Breadcrumb';
 import { Button } from '@/components/ui/Button';
@@ -36,6 +37,7 @@ export default function CheckoutPage() {
     clearBuyNowItem,
     setLastOrder,
   } = useCartStore();
+  const addCustomerOrder = useCustomerStore((s) => s.addOrder);
 
   const checkoutItems = isBuyNowMode && buyNowItem ? [buyNowItem] : cartItems;
 
@@ -182,10 +184,16 @@ export default function CheckoutPage() {
       },
       notes: notes.trim() || undefined,
       mode: isBuyNowMode && buyNowItem ? 'buy-now' : 'cart',
-      status: 'Confirmed (Demo)',
+      status: 'Confirmed',
+      estimatedDeliveryLabel:
+        deliveryOption === 'express'
+          ? 'Simulated Estimate: 1–2 Business Days'
+          : 'Simulated Estimate: 3–5 Business Days',
+      isDemo: true,
     };
 
     setLastOrder(order);
+    addCustomerOrder(order);
 
     if (isBuyNowMode && buyNowItem) {
       clearBuyNowItem();

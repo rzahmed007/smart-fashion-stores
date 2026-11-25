@@ -1,0 +1,253 @@
+export interface FaqCategory {
+  id: string;
+  title: string;
+  items: {
+    question: string;
+    answer: string;
+    linkLabel?: string;
+    linkTo?: string;
+  }[];
+}
+
+export interface PolicyDocument {
+  slug: string;
+  title: string;
+  subtitle: string;
+  lastUpdatedLabel: string;
+  sections: {
+    heading: string;
+    paragraphs: string[];
+  }[];
+}
+
+export const CONTACT_INFO_PLACEHOLDERS = {
+  supportEmail: 'concierge@smartfashionstores.com (Placeholder)',
+  supportPhone: '+91 98200 00000 (Placeholder)',
+  whatsappNumber: '+91 98200 00000 (Demo Concierge)',
+  addressLine: 'Smart Fashion Stores Flagship Desk — Address Pending Client Confirmation',
+  businessHours: 'Monday – Saturday, 10:00 AM – 7:00 PM IST (Provisional)',
+};
+
+export const ABOUT_PAGE_CONTENT = {
+  eyebrow: 'Provisional Brand Story · Client Demonstration',
+  headline: 'Smart Looks for Sharp Women',
+  intro:
+    'Smart Fashion Stores brings together traditional Indian textile sensibilities and contemporary tailoring for women who value effortless grace across workdays, festive gatherings, and intimate celebrations.',
+  philosophy:
+    'Rooted in calm botanical hues, breathable weaves, and thoughtful silhouettes, every capsule is curated to balance comfort with quiet sophistication. (Provisional editorial copy pending final brand profile from client.)',
+  craftsmanship:
+    'Our featured collections highlight Chanderi silks, hand-block inspired cottons, linen blends, and subtle zari details selected for clean drape and versatile styling.',
+  vision:
+    'To become a trusted everyday and festive wardrobe destination for discerning women seeking refined Indian ethnic wear with effortless online discovery.',
+  mission:
+    'To present curated ethnic silhouettes, transparent sizing guidance, and responsive customer support through a seamless shopping experience.',
+};
+
+export const FAQ_CATEGORIES: FaqCategory[] = [
+  {
+    id: 'ordering',
+    title: 'Ordering',
+    items: [
+      {
+        question: 'How do I place an order on this website?',
+        answer:
+          'Browse any collection, select your preferred color and size on the Product Details page or via Quick Shop, and choose either Add to Bag or Buy Now to proceed to our single-page demo checkout.',
+        linkLabel: 'Browse Shop All',
+        linkTo: '/shop',
+      },
+      {
+        question: 'Can I purchase as a guest without creating an account?',
+        answer:
+          'Yes. Guest checkout is enabled directly from the Shopping Bag and Buy Now flows without requiring sign-in.',
+      },
+    ],
+  },
+  {
+    id: 'payments',
+    title: 'Payments',
+    items: [
+      {
+        question: 'Are real payments charged during this client demonstration?',
+        answer:
+          'No. All payment methods shown at checkout—including Cash on Delivery and Simulated Online Payment—are strictly demonstration flows. No real card details or UPI credentials are collected or processed.',
+      },
+      {
+        question: 'Can I test promotional coupon codes in the demo?',
+        answer:
+          'Yes. You can test promo codes SMART10 (10% off) or FESTIVE500 (₹500 off on subtotals of ₹4,000 or more) in the Demo Checkout summary.',
+      },
+    ],
+  },
+  {
+    id: 'delivery',
+    title: 'Delivery',
+    items: [
+      {
+        question: 'How will shipping timelines and PIN code serviceability work?',
+        answer:
+          'You can preview PIN code serviceability on any Product Details page. Specific courier partners, dispatch SLAs, and regional delivery timelines will be finalized upon client confirmation prior to launch.',
+        linkLabel: 'Read Draft Shipping Policy',
+        linkTo: '/shipping-policy',
+      },
+    ],
+  },
+  {
+    id: 'sizing',
+    title: 'Product Sizing',
+    items: [
+      {
+        question: 'How do I select the right size?',
+        answer:
+          'Every Product Details page includes an interactive Size Chart modal (in inches and centimetres) alongside a step-by-step How to Measure guide covering Bust, Waist, Hip, and Shoulder.',
+        linkLabel: 'Explore Kurtis',
+        linkTo: '/category/kurtis',
+      },
+    ],
+  },
+  {
+    id: 'returns',
+    title: 'Returns & Refunds',
+    items: [
+      {
+        question: 'What is the return and exchange policy?',
+        answer:
+          'Return eligibility windows, exchange procedures, and refund timelines are currently published as draft placeholders pending final approval from the Smart Fashion Stores team.',
+        linkLabel: 'View Draft Returns Policy',
+        linkTo: '/returns-policy',
+      },
+    ],
+  },
+  {
+    id: 'tracking',
+    title: 'Order Tracking',
+    items: [
+      {
+        question: 'How can I track a demo order?',
+        answer:
+          'Visit the Track Order page and enter your simulated order ID (for example, SFS-DEMO-904218 or any order placed during your demo checkout session) to view the simulated shipment timeline.',
+        linkLabel: 'Go to Track Order',
+        linkTo: '/track-order',
+      },
+    ],
+  },
+  {
+    id: 'support',
+    title: 'Customer Support',
+    items: [
+      {
+        question: 'How can I reach the styling and support desk?',
+        answer:
+          'Use the Contact Us page form for simulated inquiries or click the WhatsApp Concierge link from any product page.',
+        linkLabel: 'Contact Customer Support',
+        linkTo: '/contact',
+      },
+    ],
+  },
+];
+
+export const POLICY_DOCUMENTS: Record<string, PolicyDocument> = {
+  'shipping-policy': {
+    slug: 'shipping-policy',
+    title: 'Shipping Policy',
+    subtitle: 'Draft Policy Content — Pending Client Approval',
+    lastUpdatedLabel: 'Draft Template · Subject to Client Confirmation',
+    sections: [
+      {
+        heading: '1. Dispatch & Processing (Provisional)',
+        paragraphs: [
+          'This page outlines the structural shipping policy for Smart Fashion Stores. Specific order processing windows, made-to-order tailoring lead times, and dispatch cut-offs will be confirmed by the client prior to production launch.',
+        ],
+      },
+      {
+        heading: '2. Serviceable Locations & Delivery Options',
+        paragraphs: [
+          'Standard and Express dispatch options shown in the demonstration storefront illustrate the intended checkout experience. Final domestic and international serviceability zones, courier partners, and shipping fee thresholds remain provisional.',
+        ],
+      },
+      {
+        heading: '3. Order Tracking & Delivery Assistance',
+        paragraphs: [
+          'Once dispatched in a live production environment, customers will receive order tracking updates via their registered contact details and the Track Order portal.',
+        ],
+      },
+    ],
+  },
+  'returns-policy': {
+    slug: 'returns-policy',
+    title: 'Returns & Refund Policy',
+    subtitle: 'Draft Policy Content — Pending Client Approval',
+    lastUpdatedLabel: 'Draft Template · Subject to Client Confirmation',
+    sections: [
+      {
+        heading: '1. Return & Exchange Eligibility (Provisional)',
+        paragraphs: [
+          'Exact return windows, unworn condition requirements, original tag guidelines, and category exclusions (such as custom-stitched or unstitched yardage) will be finalized after client review.',
+        ],
+      },
+      {
+        heading: '2. Exchange & Size Assistance',
+        paragraphs: [
+          'Customers will be able to request size guidance before ordering via our Size Chart and WhatsApp Concierge, with post-delivery exchange rules defined by Smart Fashion Stores upon launch.',
+        ],
+      },
+      {
+        heading: '3. Refund Processing',
+        paragraphs: [
+          'Approved refund methods (original payment method or store credit) and settlement timelines will be added once the payment gateway and operations workflow are finalized.',
+        ],
+      },
+    ],
+  },
+  'privacy-policy': {
+    slug: 'privacy-policy',
+    title: 'Privacy Policy',
+    subtitle: 'Draft Policy Content — Pending Client Approval',
+    lastUpdatedLabel: 'Draft Template · Subject to Client Confirmation',
+    sections: [
+      {
+        heading: '1. Demonstration Environment Notice',
+        paragraphs: [
+          'This frontend demonstration stores only non-sensitive shopping preferences (such as cart items, wishlist selections, demo addresses, and simulated order records) locally in your browser via localStorage. No passwords, payment credentials, or personal records are transmitted to external servers.',
+        ],
+      },
+      {
+        heading: '2. Planned Data Practices (Provisional)',
+        paragraphs: [
+          'Upon backend launch, this section will detail how Smart Fashion Stores collects, protects, and uses customer contact, shipping, and order data in compliance with applicable Indian data protection regulations.',
+        ],
+      },
+      {
+        heading: '3. Contact for Privacy Inquiries',
+        paragraphs: [
+          'Final grievance officer contact details and official support email addresses will be inserted once confirmed by the business.',
+        ],
+      },
+    ],
+  },
+  terms: {
+    slug: 'terms',
+    title: 'Terms & Conditions',
+    subtitle: 'Draft Policy Content — Pending Client Approval',
+    lastUpdatedLabel: 'Draft Template · Subject to Client Confirmation',
+    sections: [
+      {
+        heading: '1. Scope of Demonstration Website',
+        paragraphs: [
+          'This website is currently presented as an interactive frontend demonstration for Smart Fashion Stores. Product pricing, stock counts, promotional codes, and order confirmations shown here are illustrative mock data.',
+        ],
+      },
+      {
+        heading: '2. Product Representation & Craft Variations',
+        paragraphs: [
+          'Handwoven fabrics, natural dyes, and artisanal embroidery may exhibit subtle variations in texture and tone, which are characteristic of handcrafted textiles. Final product care and disclaimer language will be confirmed by the client.',
+        ],
+      },
+      {
+        heading: '3. Governing Terms (Provisional)',
+        paragraphs: [
+          'Official jurisdiction, intellectual property notices, and binding terms of sale will be populated following legal review by Smart Fashion Stores.',
+        ],
+      },
+    ],
+  },
+};

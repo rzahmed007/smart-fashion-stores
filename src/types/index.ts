@@ -110,6 +110,35 @@ export interface CartItem {
   fabric: string;
 }
 
+export type OrderStatus =
+  | 'Order Placed'
+  | 'Confirmed'
+  | 'Processing'
+  | 'Shipped'
+  | 'Out for Delivery'
+  | 'Delivered'
+  | 'Cancelled';
+
+export interface CustomerProfile {
+  id: string;
+  fullName: string;
+  email: string;
+  phone: string;
+}
+
+export interface SavedAddress {
+  id: string;
+  label: 'Home' | 'Work' | 'Other';
+  recipientName: string;
+  phone: string;
+  line1: string;
+  line2?: string;
+  city: string;
+  state: string;
+  pincode: string;
+  isDefault: boolean;
+}
+
 export interface OrderSummary {
   orderId: string;
   createdAt: string;
@@ -136,5 +165,7 @@ export interface OrderSummary {
   };
   notes?: string;
   mode: 'cart' | 'buy-now';
-  status: 'Confirmed (Demo)' | 'Processing' | 'Dispatched';
+  status: OrderStatus;
+  estimatedDeliveryLabel?: string;
+  isDemo?: boolean;
 }
